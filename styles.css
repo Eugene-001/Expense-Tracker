@@ -1,0 +1,152 @@
+body {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100 - 900;
+  font-style: normal;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+  min-height: 600px;
+}
+
+/* .left,
+.right {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+.left {
+  background-color: #fafafa;
+  padding: 48px 32px;
+  border-radius: 8px;
+  border: 1px solid #dddddd;
+}
+
+.income-tab {
+  padding: 20px 16px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.income1 {
+  display: flex;
+  gap: 216px;
+}
+
+.add-income {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 16px;
+  gap: 8px;
+  color: #00b04f;
+}
+
+.Expense-tab {
+  padding: 20px 16px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.Expense1 {
+  display: flex;
+  gap: 216px;
+}
+
+.add-expense {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 16px;
+  gap: 8px;
+  color: #d81414;
+}
+
+.Tracker-tab {
+  padding: 20px 16px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  margin: auto;
+  margin-top: 8px;
+  width: 100%;
+  text-align: right;
+  font-weight: bold;
+  color: #00b04f;
+}
+
+.total-money {
+  display: flex;
+  gap: 216px;
+  margin-top: 8px;
+  width: 100%;
+  text-align: right;
+  font-weight: bold;
+  color: #d81414;
+}
+
+/* .right {
+  height: 108px;
+} */
+
+.income-input {
+  padding: 16px 24px;
+  width: 90%;
+  border-radius: 8px;
+  border: 1px solid #dddddd;
+}
+
+.add-income-btn {
+  background-color: #00b04f;
+  color: white;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.expense-input {
+  padding: 16px 24px;
+  width: 90%;
+  display: flex;
+  border-radius: 8px;
+  border: 1px solid #dddddd;
+}
+
+.add-expense-btn {
+  background-color: #d81414;
+  color: white;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.Income-header {
+  margin-bottom: 16px;
+}
+
+.Totalcash-Header,
+.net-total-display {
+  color: black;
+}

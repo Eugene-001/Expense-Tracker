@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="Income-header">Income log</div>
+        <div class="income-tab">
+          <div class="income1">
+            <div class="income-source">Input your Income</div>
+
+            <!-- <div class="income-value">N1,000,000.00</div> -->
+          </div>
+          <div class="add-income">
+            <!-- Updated input and button for income -->
+            <input
+              type="number"
+              class="income-input"
+              id="income-input"
+              placeholder="Enter income amount"
+            />
+
+            <button class="add-income-btn" id="add-income-btn">
+              <div class="icon"><img src="01.svg" alt="#" /></div>
+              <div class="text">Add</div>
+            </button>
+
+            <!-- Updated: Added total income display -->
+            <div class="total-income-display">
+              Total: N <span id="total-income">0.00</span>
+            </div>
+            <!-- Previous code commented out below -->
+            <!-- <div>Total: N <span id="total-income">0.00</span></div> -->
+          </div>
+        </div>
+
+        <div class="Income-header">Expense log</div>
+        <div class="Expense-tab">
+          <div class="Expense1">
+            <div class="income-source">Input your expense</div>
+
+            <!-- <div class="Expense Value-value">N1,000,000.00</div> -->
+          </div>
+
+          <div class="add-expense">
+            <!-- Updated input and button for expense -->
+            <input
+              type="number"
+              class="expense-input"
+              id="expense-input"
+              placeholder="Enter expense amount"
+            />
+
+            <button class="add-expense-btn" id="add-expense-btn">
+              <div class="icon"><img src="01.svg" alt="#" /></div>
+              <div class="text">Add</div>
+            </button>
+
+            <!-- Updated: Added total expense display -->
+            <div class="total-expense-display">
+              Total: N <span id="total-expense">0.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="Tracker-tab">
+          <div class="total-money">
+            <div class="Totalcash-Header">Total Cash Remaining</div>
+            <!-- Updated: Added net total display -->
+            <div class="net-total-display">
+              Net Total: N <span id="net-total">0.00</span>
+            </div>
+            <!-- Previous code commented out below -->
+            <!-- <div class="Totalcash-Value">N0.00</div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <img src="Money pic.svg" alt="#" />
+      </div>
+    </div>
+
+    <script>
+      // --- Fixed typo: getElementById ---
+      const incomeInput = document.getElementById("income-input");
+      const addIncomeBtn = document.getElementById("add-income-btn");
+      const totalIncomeDisplay = document.getElementById("total-income");
+
+      // --- Added expense and net total elements ---
+      const expenseInput = document.getElementById("expense-input");
+      const addExpenseBtn = document.getElementById("add-expense-btn");
+      const totalExpenseDisplay = document.getElementById("total-expense");
+      const netTotalDisplay = document.getElementById("net-total");
+
+      let totalIncome = 0;
+      let totalExpense = 0;
+
+      // --- Function to update net total ---
+      function updateNetTotal() {
+        netTotalDisplay.textContent = (totalIncome - totalExpense).toFixed(2);
+      }
+
+      // --- Income button logic ---
+      addIncomeBtn.addEventListener("click", function () {
+        const value = parseFloat(incomeInput.value);
+        if (!isNaN(value) && value > 0) {
+          totalIncome += value;
+          totalIncomeDisplay.textContent = totalIncome.toFixed(2);
+          incomeInput.value = "";
+          updateNetTotal(); // Update net total after income
+        }
+      });
+
+      // --- Expense button logic ---
+      addExpenseBtn.addEventListener("click", function () {
+        const value = parseFloat(expenseInput.value);
+        if (!isNaN(value) && value > 0) {
+          totalExpense += value;
+          totalExpenseDisplay.textContent = totalExpense.toFixed(2);
+          expenseInput.value = "";
+          updateNetTotal(); // Update net total after expense
+        }
+      });
+    </script>
+  </body>
+</html>
